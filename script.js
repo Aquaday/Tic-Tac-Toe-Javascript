@@ -1,5 +1,6 @@
 const gameBoard = document.querySelector("#gameboard")
 const info = document.querySelector("#info")
+const resetbutton = document.querySelector("#resetButton")
 let go = "circle"
 
 const startCells = ["", "", "", "", "", "", "", "", ""]
@@ -14,7 +15,14 @@ function createBoard() {
 
     })
 }
+
 createBoard()
+
+resetbutton.addEventListener("click", () => {
+    gameBoard.innerHTML = ""
+    info.innerHTML = ""
+    createBoard()
+})
 
 
 function addGo(e) {
