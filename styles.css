@@ -5,6 +5,12 @@
 
 body {
   margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
 }
 
 a {
@@ -16,6 +22,61 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+#gameboard {
+  width: 300px;
+  height: 300px;
+  background-color: #000;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid black;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border: 1px solid black;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  height: 90px;
+  width:  90px;
+  border: 15px solid blue;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.cross {
+  width: 90px;
+  height: 90px;
+ position: relative;
+ transform: rotate(45deg);
+}
+
+.cross:before, .cross:after {
+  content: "";
+  position: absolute;
+  background-color: red;
+}
+
+.cross:before{
+  left: 50%;
+  width: 30%;
+  height: 100%;
+  margin-left: -15%;
+}
+
+.cross:after{
+  top: 50%;
+  height: 30%;
+  width: 100%;
+  margin-top: -15%;
 }
 
 @media (max-width: 500px) {
